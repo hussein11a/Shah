@@ -28,6 +28,49 @@
     color: #61dafb;
 }
 
+.admin-links {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-links h3 {
+    color: #61dafb;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.admin-links p {
+    font-size: 0.8rem;
+    margin: 10px 0;
+}
+
+.admin-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #61dafb;
+    color: #0f0f10;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.admin-link:hover {
+    background-color: #4fa8cc;
+    color: #0f0f10;
+}
+
+.admin-note {
+    font-size: 0.7rem !important;
+    color: #90ee90;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
