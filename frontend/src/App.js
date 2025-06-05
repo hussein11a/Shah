@@ -61,7 +61,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Let all other routes fall through to static files */}
+          <Route path="/home" element={<Home />} />
+          {/* Admin routes are handled by static files in public/admin/ */}
         </Routes>
       </BrowserRouter>
     </div>
