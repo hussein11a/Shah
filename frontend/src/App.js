@@ -56,6 +56,14 @@ const Home = () => {
 };
 
 function App() {
+  // Check if current path is admin
+  const isAdminPath = window.location.pathname.startsWith('/admin');
+  
+  // If it's an admin path, don't render React Router - let the static files handle it
+  if (isAdminPath) {
+    return null;
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
