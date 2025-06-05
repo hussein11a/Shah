@@ -1,0 +1,2 @@
+# Redirect admin paths to static files, not React Router
+/admin/* /admin/:splat 200
