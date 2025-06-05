@@ -56,21 +56,12 @@ const Home = () => {
 };
 
 function App() {
-  // Check if current path is admin
-  const isAdminPath = window.location.pathname.startsWith('/admin');
-  
-  // If it's an admin path, don't render React Router - let the static files handle it
-  if (isAdminPath) {
-    return null;
-  }
-
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Home />} />
+          {/* Let all other routes fall through to static files */}
         </Routes>
       </BrowserRouter>
     </div>
