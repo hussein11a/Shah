@@ -37,7 +37,7 @@ const Home = () => {
           <h3>Netlify CMS Admin</h3>
           <p>Access the content management system:</p>
           <a
-            href="/admin"
+            href="/admin/index.html"
             className="admin-link"
             target="_blank"
             rel="noopener noreferrer"
