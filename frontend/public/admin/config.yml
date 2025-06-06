@@ -1,74 +1,39 @@
+# إعدادات النظام الخلفي لحفظ البيانات إلى فرع Git
 backend:
-  name: git-gateway
-  branch: main
+  name: git-gateway  # استخدام Git Gateway للتوثيق
+  branch: main       # اسم الفرع الرئيسي
 
-media_folder: public/img
-public_folder: img
+# إعدادات المجلدات للوسائط
+media_folder: "static/img"   # المجلد على نظام الملفات لتخزين الوسائط
+public_folder: "/img"      # المسار العام للوصول إلى الوسائط
 
+# تعريف المجموعات (collections)
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "_posts/blog"
+  - name: pages
+    label: Pages
+    files:
+      - file: "src/pages/index.md"
+        label: Home
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
+
+  - name: blog
+    label: Blog
+    folder: "src/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: "Layout"
-        name: "layout"
-        widget: "hidden"
-        default: "blog"
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Publish Date"
-        name: "date"
-        widget: "datetime"
-      - label: "Featured Image"
-        name: "thumbnail"
-        widget: "image"
-      - label: "Rating (scale of 1-5)"
-        name: "rating"
-        widget: "number"
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "index.md"
-        fields:
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Intro"
-            name: "intro"
-            widget: "markdown"
-          - label: "Team"
-            name: "team"
-            widget: "list"
-            fields:
-              - label: "Name"
-                name: "name"
-                widget: "string"
-              - label: "Position"
-                name: "position"
-                widget: "string"
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-
-      - label: "About Page"
-        name: "about"
-        file: "about.md"
-        fields:
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Intro"
-            name: "intro"
-            widget: "markdown"
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
+      - label: Post Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Body
+        name: body
+        widget: markdown
